@@ -15,18 +15,8 @@ variable "proxmox_api_token" {
   type        = string
 }
 
-variable "tailscale_tailnet" {
-  description = "Tailscale tailnet name"
-  type        = string
-}
-
-variable "tailscale_client_id" {
-  description = "Tailscale OAuth client ID"
-  type        = string
-}
-
-variable "tailscale_client_secret" {
-  description = "Tailscale OAuth client secret"
+variable "tailscale_key" {
+  description = "Tailscale key for device authentication"
   type        = string
 }
 

@@ -4,19 +4,7 @@ terraform {
       source  = "bpg/proxmox"
       version = "~> 0.86.0"
     }
-
-    tailscale = {
-      source  = "tailscale/tailscale"
-      version = "~> 0.24.0"
-    }
   }
-}
-
-provider "tailscale" {
-  tailnet             = var.tailscale_tailnet
-  oauth_client_id     = var.tailscale_client_id
-  oauth_client_secret = var.tailscale_client_secret
-  scopes              = ["devices:core", "auth_keys"]
 }
 
 provider "proxmox" {

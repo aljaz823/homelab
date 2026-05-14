@@ -15,6 +15,6 @@ variable "ssh_public_key_sr_mac_aljaz" {
 }
 
 variable "tailscale_key" {
-  description = "Tailscale preauthorized key for Tailscale client"
+  description = "Tailscale key for device authentication"
   type        = string
 }

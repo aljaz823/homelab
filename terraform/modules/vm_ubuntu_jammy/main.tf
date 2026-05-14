@@ -2,7 +2,7 @@ resource "proxmox_virtual_environment_vm" "vm_ubuntu_jammy" {
   name      = var.name
   node_name = var.node_name
 
-  template = false
+  tags = ["terraform"]
 
   agent {
     enabled = true

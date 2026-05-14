@@ -44,11 +44,13 @@ resource "proxmox_virtual_environment_file" "cloud_init_user_data" {
       - systemctl start qemu-guest-agent
       - curl -fsSL https://tailscale.com/install.sh | sh
       - tailscale up --authkey=${var.tailscale_key}
+      - tailscale set --hostname=${var.hostname}
       - wget https://apt.puppetlabs.com/puppet7-release-jammy.deb
       - dpkg -i puppet7-release-jammy.deb
       - apt-get update
       - apt-get install -y puppetserver
       - sed -i 's/-Xms[^ ]*/-Xms512m/g; s/-Xmx[^ ]*/-Xmx512m/g' /etc/default/puppetserver
+      - echo "*" > /etc/puppetlabs/puppet/autosign.conf
       - systemctl enable puppetserver
       - systemctl start puppetserver
     EOF
